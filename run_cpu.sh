@@ -1,6 +1,6 @@
 #!/bin/bash
 HASH=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
-name=${USER}_pymarl_${HASH}
+name=${USER}_cola_${HASH}
 
 echo "Launching container named '${name}' on CPU'"
 # Launches a docker container using our image, and runs the provided command
@@ -14,7 +14,7 @@ fi
  ${cmd} run --rm \
     --cpuset-cpus=0-5 \
     --name $name \
-    -v `pwd`:/home/user/pymarl \
-    -e PYTHONPATH=/home/user/pymarl \
+    -v `pwd`:/home/duser/cola \
+    -e PYTHONPATH=/home/duser/cola \
     -t pymarl \
     ${@:1}
