@@ -1,7 +1,7 @@
 import copy
 from components.episode_buffer import EpisodeBatch
 from modules.critics.facmac import FACMACDiscreteCritic
-from components.action_selectors import multinomial_entropy
+# from components.action_selectors import multinomial_entropy
 import torch as th
 from torch.optim import RMSprop, Adam
 from modules.mixers.vdn import VDNMixer

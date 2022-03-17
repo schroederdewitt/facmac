@@ -61,7 +61,7 @@ RUN ~/venv/bin/python3 -m pip install --upgrade pip
 # RUN pip install -r requirements.txt
 
 # install Sacred
-RUN . /home/duser/venv/bin/activate && pip3 install jsonpickle==0.9.6 setuptools
+RUN . /home/duser/venv/bin/activate && pip3 install jsonpickle==0.9.6 setuptools pyyaml
 RUN git clone https://github.com/oxwhirl/sacred.git /home/duser/install/sacred
 RUN cd /home/duser/install/sacred && . /home/duser/venv/bin/activate && python3 setup.py install
 
@@ -98,6 +98,9 @@ RUN echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/duser/.mujoco/mujoco210/
 RUN echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/duser/.mujoco/mujoco210/bin" >> ~/.profile
 RUN . /home/duser/venv/bin/activate && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/duser/.mujoco/mujoco210/bin && \
     export MUJOCO_PY_MUJOCO_PATH=/home/duser/.mujoco/mujoco210 && python3 -c "import mujoco_py"
+
+# install Multi-Agent Mujoco
+RUN . ~/venv/bin/activate && pip3 install git+https://github.com/schroederdewitt/multiagent_mujoco.git@v2
 
 # set python path
 RUN echo "export PYTHONPATH=~/entryfolder" >> /home/duser/.bashrc

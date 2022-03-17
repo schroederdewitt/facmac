@@ -4,7 +4,7 @@ from gym.spaces import Box
 import numpy as np
 from gym.wrappers import TimeLimit
 from envs.multiagentenv import MultiAgentEnv
-from envs.mamujoco import obsk
+from multiagent_mujoco import obsk
 
 
 # using code from https://github.com/ikostrikov/pytorch-ddpg-naf

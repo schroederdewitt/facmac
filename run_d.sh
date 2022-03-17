@@ -20,4 +20,4 @@ docker run -d \
     -v `pwd`/src:/home/duser/entryfolder \
     -e PYTHONPATH=/home/duser/entryfolder \
     -t facmac \
-    ${@:2}
+    /bin/bash -c "source ~/.bashrc && ${@:2}"

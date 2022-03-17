@@ -48,17 +48,22 @@ Run an ALGORITHM from the folder `src/config/algs`
 in an ENVIRONMENT from the folder `src/config/envs`
 on a specific GPU using some PARAMETERS:
 ```
-bash run.sh <GPU> python3 src/main.py --config=<ALGORITHM> --env-config=<ENVIRONMENT> with <PARAMETERS>
+bash run_d.sh <GPU> "python3 main.py --config=<ALGORITHM> --env-config=<ENVIRONMENT> with <PARAMETERS>"
 ```
 
 For example, to run the FACMAC algorithm on our continuous predator-prey task (with 3 agents) for 2mil timesteps using docker:
 ```
-bash run.sh <GPU> python3 src/main.py --config=facmac_pp --env-config=particle with env_args.scenario_name=continuous_pred_prey_3a t_max=2000000
+bash run_d.sh <GPU> "python3 main.py --config=facmac_pp --env-config=particle with env_args.scenario_name=continuous_pred_prey_3a t_max=2000000"
 ```
 
 Another example, to run the FACMAC algorithm on some SMAC map (say '2s3z') for 2mil timesteps using docker:
 ```
-bash run.sh <GPU> python3 src/main.py --config=facmac_smac --env-config=sc2 with env_args.map_name=2s3z t_max=2000000
+bash run_d.sh <GPU> "python3 main.py --config=facmac_smac --env-config=sc2 with env_args.map_name=2s3 t_max=2000000"
+```
+
+On Multi-Agent Mujoco:
+```
+bash run_d.sh <GPU> "python3 main.py --config=facmac_mamujoco --env-config=mujoco_multi with env_args.scenario=Ant-v2 env_args.agent_conf=2x4 env_args.agent_obsk=1 t_max=2000000"
 ```
 
 The config files (src/config/algs/*.yaml) contain default hyper-parameters for the respective algorithms.

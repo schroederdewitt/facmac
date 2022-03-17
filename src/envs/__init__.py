@@ -3,7 +3,7 @@ from functools import partial
 from .multiagentenv import MultiAgentEnv
 from .matrix_game.cts_matrix_game import Matrixgame as CtsMatrix
 from .particle import Particle
-from .mamujoco import ManyAgentAntEnv, ManyAgentSwimmerEnv, MujocoMulti
+from multiagent_mujoco import ManyAgentAntEnv, ManyAgentSwimmerEnv, MujocoMulti
 from smac.env import MultiAgentEnv, StarCraft2Env
 
 
