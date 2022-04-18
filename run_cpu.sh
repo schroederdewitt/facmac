@@ -14,7 +14,7 @@ fi
  ${cmd} run --rm \
     --cpuset-cpus=0-5 \
     --name $name \
-    -v `pwd`:/home/duser/cola \
-    -e PYTHONPATH=/home/duser/cola \
+    -v `pwd`:/home/duser/facmac \
+    -e PYTHONPATH=/home/duser/facmac \
     -t pymarl \
     ${@:1}
