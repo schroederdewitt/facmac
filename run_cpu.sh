@@ -1,6 +1,6 @@
 #!/bin/bash
 HASH=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
-name=${USER}_cola_${HASH}
+name=${USER}_facmac_${HASH}
 
 echo "Launching container named '${name}' on CPU'"
 # Launches a docker container using our image, and runs the provided command
